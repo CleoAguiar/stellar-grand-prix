@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bb5h55bub2d30"]
 
 [ext_resource type="Texture2D" uid="uid://bgvyekq2efx2h" path="res://assets/purple.png" id="1_3hls8"]
+[ext_resource type="PackedScene" uid="uid://b0stajjw7wadw" path="res://scenes/player.tscn" id="2_bswci"]
 
 [node name="level1" type="Node2D" unique_id=1025364563]
 
@@ -9,3 +10,6 @@ offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_3hls8")
 stretch_mode = 1
+
+[node name="Player" parent="." unique_id=199418916 instance=ExtResource("2_bswci")]
+position = Vector2(538, 313)
