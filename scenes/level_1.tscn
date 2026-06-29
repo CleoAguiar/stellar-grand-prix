@@ -20,7 +20,6 @@ script = ExtResource("1_5xbjy")
 layer = -10
 
 [node name="MazeMap" parent="Graphics/CanvasLayer" unique_id=859919749 instance=ExtResource("3_rus8k")]
-z_index = -50
 position = Vector2(852, 622)
 scale = Vector2(0.01, 0.01)
 
@@ -72,15 +71,14 @@ label_settings = SubResource("LabelSettings_5xbjy")
 
 [node name="Tutorial" type="Label" parent="Graphics" unique_id=301868919]
 z_index = -25
-offset_left = -339.0
-offset_top = -55.0
-offset_right = 59.0
-offset_bottom = 127.0
+offset_left = -343.0
+offset_top = -181.0
+offset_right = 150.0
+offset_bottom = 1.0
 text = "Rules:
-- Use arrow keys or WASD to move
-- Go from the start to the end
-- You will go back to the start if
-you go outside of the maze!"
+- Move with Arrow Keys or WASD
+- Reach the finish line
+- Going off the track resets you to the start"
 label_settings = SubResource("LabelSettings_4nkto")
 
 [node name="Player" parent="." unique_id=199418916 instance=ExtResource("2_bswci")]
