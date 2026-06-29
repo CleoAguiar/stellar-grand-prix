@@ -24,6 +24,9 @@ z_index = -50
 position = Vector2(852, 622)
 scale = Vector2(0.01, 0.01)
 
+[node name="Polygon2D" parent="Graphics/CanvasLayer/MazeMap" index="1" unique_id=641786099]
+texture = null
+
 [node name="SportLabel" type="Label" parent="Graphics/CanvasLayer" unique_id=303304083]
 z_index = -25
 offset_left = 867.0
@@ -88,3 +91,5 @@ z_index = -50
 position = Vector2(-197, -232)
 
 [connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
+
+[editable path="Graphics/CanvasLayer/MazeMap"]
