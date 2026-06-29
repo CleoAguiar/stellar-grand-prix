@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var force = 1000
+var force = 100
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("move_right"):

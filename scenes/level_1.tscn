@@ -19,6 +19,29 @@ script = ExtResource("1_5xbjy")
 [node name="CanvasLayer" type="CanvasLayer" parent="Graphics" unique_id=997837113]
 layer = -10
 
+[node name="MazeMap" parent="Graphics/CanvasLayer" unique_id=859919749 instance=ExtResource("3_rus8k")]
+z_index = -50
+position = Vector2(852, 622)
+scale = Vector2(0.01, 0.01)
+
+[node name="SportLabel" type="Label" parent="Graphics/CanvasLayer" unique_id=303304083]
+z_index = -25
+offset_left = 867.0
+offset_top = 543.0
+offset_right = 1138.0
+offset_bottom = 588.0
+text = "Stellar Grand Prix"
+label_settings = SubResource("LabelSettings_5xbjy")
+
+[node name="CircuitLabel" type="Label" parent="Graphics/CanvasLayer" unique_id=1608306817]
+z_index = -25
+offset_left = 924.0
+offset_top = 588.0
+offset_right = 1138.0
+offset_bottom = 633.0
+text = "Starlift Circuit"
+label_settings = SubResource("LabelSettings_5xbjy")
+
 [node name="Background" type="TextureRect" parent="Graphics/CanvasLayer" unique_id=1156278835]
 z_index = -100
 offset_right = 1152.0
@@ -28,19 +51,19 @@ stretch_mode = 1
 
 [node name="StartLabel" type="Label" parent="Graphics" unique_id=474321465]
 z_index = -25
-offset_left = 303.0
-offset_top = 107.0
-offset_right = 398.0
-offset_bottom = 152.0
+offset_left = 158.0
+offset_top = 18.0
+offset_right = 253.0
+offset_bottom = 63.0
 text = "START"
 label_settings = SubResource("LabelSettings_5xbjy")
 
 [node name="EndLabel" type="Label" parent="Graphics" unique_id=231768407]
 z_index = -25
-offset_left = 206.0
-offset_top = -171.0
-offset_right = 301.0
-offset_bottom = -126.0
+offset_left = 486.0
+offset_top = 37.0
+offset_right = 581.0
+offset_bottom = 82.0
 text = "END"
 label_settings = SubResource("LabelSettings_5xbjy")
 
@@ -60,8 +83,8 @@ label_settings = SubResource("LabelSettings_4nkto")
 [node name="Player" parent="." unique_id=199418916 instance=ExtResource("2_bswci")]
 position = Vector2(221, 136)
 
-[node name="Maze" parent="." unique_id=859919749 instance=ExtResource("3_rus8k")]
+[node name="Maze" parent="." unique_id=252534476 instance=ExtResource("3_rus8k")]
 z_index = -50
-position = Vector2(234, 153)
+position = Vector2(-197, -232)
 
 [connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
