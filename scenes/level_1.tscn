@@ -26,6 +26,17 @@ scale = Vector2(0.01, 0.01)
 [node name="Polygon2D" parent="Graphics/CanvasLayer/MazeMap" index="1" unique_id=641786099]
 texture = null
 
+[node name="Background" type="TextureRect" parent="Graphics/CanvasLayer" unique_id=1156278835]
+z_index = -100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3hls8")
+expand_mode = 1
+stretch_mode = 1
+
 [node name="SportLabel" type="Label" parent="Graphics/CanvasLayer" unique_id=303304083]
 z_index = -25
 offset_left = 867.0
@@ -43,13 +54,6 @@ offset_right = 1138.0
 offset_bottom = 633.0
 text = "Starlift Circuit"
 label_settings = SubResource("LabelSettings_5xbjy")
-
-[node name="Background" type="TextureRect" parent="Graphics/CanvasLayer" unique_id=1156278835]
-z_index = -100
-offset_right = 1152.0
-offset_bottom = 648.0
-texture = ExtResource("1_3hls8")
-stretch_mode = 1
 
 [node name="StartLabel" type="Label" parent="Graphics" unique_id=474321465]
 z_index = -25
