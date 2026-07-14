@@ -40,9 +40,12 @@ https://cleoaguiar.itch.io/stellar-grand-prix
 
 ## ✨ Features
 
-- 🚀 Fast-paced arcade racing
+- 🚀 Fast-paced arcade racing gameplay
 - 🌌 Futuristic space-themed circuit
 - 🎯 Responsive keyboard controls
+- 👆 Swipe gesture controls for touch devices
+- 📱 Responsive window scaling for different screen sizes
+- 🖼️ Adaptive background layout
 - 🛸 Sci-fi visual style
 - ⚡ Built with Godot Engine 4
 
@@ -58,6 +61,8 @@ https://cleoaguiar.itch.io/stellar-grand-prix
 
 ## 🎮 Controls
 
+### Desktop
+
 | Action | Keyboard |
 |---------|----------|
 | Accelerate | ↑ |
@@ -65,15 +70,40 @@ https://cleoaguiar.itch.io/stellar-grand-prix
 | Turn Left | ← |
 | Turn Right | → |
 
-> **Current version:** Keyboard controls only. Mobile touch controls are planned for a future update.
+### Mobile / Touch Devices
+
+| Action | Gesture |
+|---------|---------|
+| Accelerate | Swipe Up |
+| Brake / Reverse | Swipe Down |
+| Turn Left | Swipe Left |
+| Turn Right | Swipe Right |
+
+The game automatically adapts the interface and input handling depending on the device.
+
+---
+
+## 📱 Responsive Design
+
+Stellar Grand Prix supports different screen sizes through responsive window scaling and adaptive background positioning.
+
+The game is designed to maintain consistent gameplay across desktop and touch devices, providing a smooth experience on different resolutions.
 
 ---
 
 ## 📂 Project Organization
 
-The project is currently organized into scenes, scripts, and assets.
+The project is organized into:
 
-As the project grows, dedicated folders for audio, UI, documentation, and additional game content will be added to keep the codebase organized and scalable.
+```text
+├── assets/        # Visual assets
+├── docs/          # Documentation and screenshots
+├── scenes/        # Game scenes
+├── scripts/       # GDScript files
+└── project.godot  # Godot project configuration
+```
+
+As development continues, additional folders for audio, UI, and game content may be added to keep the project scalable and maintainable.
 
 ---
 
@@ -91,7 +121,9 @@ Open the project with **Godot Engine 4** and press **F5** to run.
 
 ## 🗺️ Roadmap
 
-- [ ] Mobile touch controls
+- [x] Responsive window scaling
+- [x] Adaptive background layout
+- [x] Mobile swipe gesture controls
 - [ ] Additional race tracks
 - [ ] More spacecraft
 - [ ] Boost mechanics
@@ -104,7 +136,7 @@ Open the project with **Godot Engine 4** and press **F5** to run.
 
 🚧 **Active Development**
 
-New gameplay features, tracks, visual improvements, and quality-of-life updates are being added as development continues.
+Stellar Grand Prix is under continuous development, with improvements focused on gameplay mechanics, accessibility, visual polish, and new racing content.
 
 ---
 
