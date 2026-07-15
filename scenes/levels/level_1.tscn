@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bgvyekq2efx2h" path="res://assets/purple.png" id="1_3hls8"]
 [ext_resource type="Script" uid="uid://caf5w1vre1lmq" path="res://scripts/level_1.gd" id="1_5xbjy"]
-[ext_resource type="PackedScene" uid="uid://b0stajjw7wadw" path="res://scenes/player.tscn" id="2_bswci"]
-[ext_resource type="PackedScene" uid="uid://dbm8fuxvocej3" path="res://scenes/maze.tscn" id="3_rus8k"]
+[ext_resource type="PackedScene" uid="uid://b0stajjw7wadw" path="res://entities/player.tscn" id="2_bswci"]
+[ext_resource type="PackedScene" uid="uid://dbm8fuxvocej3" path="res://scenes/levels/maze.tscn" id="3_rus8k"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5xbjy"]
 font_size = 32

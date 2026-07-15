@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bficmn4k4x3lm"]
+
+[ext_resource type="Script" uid="uid://lawhxdmbxc88" path="res://scripts/settings.gd" id="1_5p8wc"]
+
+[node name="Settings" type="Control" unique_id=1558569326]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p8wc")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1612978597]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.6666667)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=643326496]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.5
+offset_top = -103.5
+offset_right = 203.5
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=323146103]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="MusicButton" type="CheckButton" parent="VBoxContainer" unique_id=1435543540]
+layout_mode = 2
+button_pressed = true
+text = "Music Volume"
+
+[node name="Settings" type="CheckButton" parent="VBoxContainer" unique_id=1989170156]
+layout_mode = 2
+button_pressed = true
+text = "SFX Volume"
+
+[node name="FullscreenButton" type="CheckButton" parent="VBoxContainer" unique_id=1236827225]
+layout_mode = 2
+button_pressed = true
+text = "Fullscreen"
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=557673199]
+layout_mode = 2
+text = "Credits"
+
+[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1829009159]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
