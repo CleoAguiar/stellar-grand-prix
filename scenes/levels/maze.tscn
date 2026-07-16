@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dbm8fuxvocej3"]
 
-[ext_resource type="Texture2D" uid="uid://cw8nep6fuy2gr" path="res://assets/darkPurple.png" id="1_ol5qi"]
+[ext_resource type="Texture2D" uid="uid://cw8nep6fuy2gr" path="res://assets/sprites/darkPurple.png" id="1_ol5qi"]
 
 [node name="Maze" type="Area2D" unique_id=859919749]
 

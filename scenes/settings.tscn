@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://bficmn4k4x3lm"]
 
 [ext_resource type="Script" uid="uid://lawhxdmbxc88" path="res://scripts/settings.gd" id="1_5p8wc"]
+[ext_resource type="Texture2D" uid="uid://cw8nep6fuy2gr" path="res://assets/sprites/darkPurple.png" id="2_r6d6q"]
+[ext_resource type="FontFile" uid="uid://fomltxatve4u" path="res://assets/fonts/ShareTechMono-Regular.ttf" id="4_es4n0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_83j8s"]
+
+[sub_resource type="FontVariation" id="FontVariation_6wm04"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gis3k"]
 
 [node name="Settings" type="Control" unique_id=1558569326]
 layout_mode = 3
@@ -11,7 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5p8wc")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1612978597]
+[node name="Background" type="TextureRect" parent="." unique_id=1011019886]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,7 +27,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.6666667)
+texture = ExtResource("2_r6d6q")
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1246822572]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -41.0
+offset_bottom = 41.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+
+[node name="BackButton" type="Button" parent="MarginContainer" unique_id=1829009159]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_es4n0")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_83j8s")
+text = "X"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=643326496]
 layout_mode = 1
@@ -28,41 +55,55 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -203.5
-offset_top = -103.5
-offset_right = 203.5
-offset_bottom = 126.0
+offset_left = -236.0
+offset_top = -141.5
+offset_right = 236.0
+offset_bottom = 141.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Title" type="Label" parent="VBoxContainer" unique_id=323146103]
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
+theme_override_fonts/font = SubResource("FontVariation_6wm04")
+theme_override_font_sizes/font_size = 54
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="MusicButton" type="CheckButton" parent="VBoxContainer" unique_id=1435543540]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=267437683]
 layout_mode = 2
-button_pressed = true
-text = "Music Volume"
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_bottom = 36
 
-[node name="Settings" type="CheckButton" parent="VBoxContainer" unique_id=1989170156]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=1986248665]
 layout_mode = 2
-button_pressed = true
-text = "SFX Volume"
 
-[node name="FullscreenButton" type="CheckButton" parent="VBoxContainer" unique_id=1236827225]
+[node name="MusicButton" type="CheckButton" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1435543540]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_es4n0")
+theme_override_font_sizes/font_size = 36
+button_pressed = true
+text = "Music"
+
+[node name="Settings" type="CheckButton" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1989170156]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_es4n0")
+theme_override_font_sizes/font_size = 36
+button_pressed = true
+text = "SFX"
+
+[node name="FullscreenButton" type="CheckButton" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1236827225]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_es4n0")
+theme_override_font_sizes/font_size = 36
 button_pressed = true
 text = "Fullscreen"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=557673199]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_es4n0")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_gis3k")
 text = "Credits"
 
-[node name="BackButton" type="Button" parent="VBoxContainer" unique_id=1829009159]
-layout_mode = 2
-text = "Back"
-
+[connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

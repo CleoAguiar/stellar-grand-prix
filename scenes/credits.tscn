@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dtcweac7wda0q"]
 
 [ext_resource type="Script" uid="uid://c8s2lyho2083f" path="res://scripts/credits.gd" id="1_0bpdh"]
+[ext_resource type="Texture2D" uid="uid://cw8nep6fuy2gr" path="res://assets/sprites/darkPurple.png" id="2_0ctdu"]
+[ext_resource type="FontFile" uid="uid://fomltxatve4u" path="res://assets/fonts/ShareTechMono-Regular.ttf" id="3_2fbfq"]
 
 [node name="Credits" type="Control" unique_id=1779378381]
 layout_mode = 3
@@ -11,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0bpdh")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=485612893]
+[node name="Background" type="TextureRect" parent="." unique_id=1823357729]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,28 +21,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 0.6666667)
+texture = ExtResource("2_0ctdu")
+stretch_mode = 1
 
 [node name="Label" type="Label" parent="." unique_id=1089568293]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.5
-offset_top = -178.5
-offset_right = 250.5
-offset_bottom = 178.5
+anchor_bottom = 1.0
+offset_left = -476.0
+offset_right = 476.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 32
-text = "Congratulations!
+theme_override_fonts/font = ExtResource("3_2fbfq")
+theme_override_font_sizes/font_size = 36
+text = "THE RACE NEVER ENDS
 
-Game by Cleo Aguiar
+Every lap, every challenge and every line of code
+helped bring this little universe to life.
 
-Thanks for playing!"
+Thank you for being part of it.
+
+Created by
+Cleo Aguiar
+
+See you among the stars."
 horizontal_alignment = 1
 vertical_alignment = 1
 
