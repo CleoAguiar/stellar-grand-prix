@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddp0h3cgobnx2" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://cw8nep6fuy2gr" path="res://assets/sprites/darkPurple.png" id="2_ekxnf"]
+[ext_resource type="Texture2D" uid="uid://cjk58curjj11y" path="res://assets/ui/title/stellar_grand_prix.png" id="3_8ln24"]
 [ext_resource type="FontFile" uid="uid://fomltxatve4u" path="res://assets/fonts/ShareTechMono-Regular.ttf" id="4_wu84c"]
 [ext_resource type="Texture2D" uid="uid://cpm2gg3eu18mi" path="res://assets/sprites/ufoGreen.png" id="5_8ln24"]
 
@@ -52,17 +53,9 @@ layout_direction = 4
 layout_mode = 2
 theme = SubResource("Theme_wu84c")
 
-[node name="Title" type="Label" parent="VBoxContainer/TitleContainer" unique_id=323146103]
+[node name="Title" type="TextureRect" parent="VBoxContainer/TitleContainer" unique_id=257964556]
 layout_mode = 2
-theme_override_font_sizes/font_size = 74
-text = "Stellar"
-horizontal_alignment = 1
-
-[node name="SubTitle" type="Label" parent="VBoxContainer/TitleContainer" unique_id=506338900]
-layout_mode = 2
-theme_override_font_sizes/font_size = 54
-text = "Grand Prix"
-horizontal_alignment = 1
+texture = ExtResource("3_8ln24")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1873969508]
 layout_mode = 2
