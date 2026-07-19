@@ -50,14 +50,14 @@ layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("1_ahhtf")
 theme_override_font_sizes/font_size = 18
-text = "Starlif Circuit"
+text = "XXXXXXXXXX"
 
 [node name="TimerLabel" type="Label" parent="MarginContainer/HBoxContainer/LeftBoxContainer" unique_id=1091272024]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_ahhtf")
 theme_override_font_sizes/font_size = 36
-text = "00:45.78"
+text = "00:00.00"
 
 [node name="RightBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=416192613]
 layout_mode = 2
