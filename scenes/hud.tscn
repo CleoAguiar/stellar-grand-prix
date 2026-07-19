@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://2p32evdg6lc0"]
+
+[ext_resource type="Script" uid="uid://ojy2m2v2clu0" path="res://scripts/hud.gd" id="1_5ysmq"]
+[ext_resource type="FontFile" uid="uid://fomltxatve4u" path="res://assets/fonts/ShareTechMono-Regular.ttf" id="1_ahhtf"]
+[ext_resource type="Texture2D" uid="uid://cpm2gg3eu18mi" path="res://assets/sprites/ufoGreen.png" id="2_oo0fn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oo0fn"]
+
+[node name="HUD" type="Control" unique_id=1252097913]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5ysmq")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=80495068]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=536064360]
+layout_mode = 2
+
+[node name="LeftBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=539962723]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="TitleContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/LeftBoxContainer" unique_id=1152186433]
+layout_mode = 2
+
+[node name="SportLabel" type="Label" parent="MarginContainer/HBoxContainer/LeftBoxContainer/TitleContainer" unique_id=323491824]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 36
+text = "SGP"
+
+[node name="CircuitLabel" type="Label" parent="MarginContainer/HBoxContainer/LeftBoxContainer/TitleContainer" unique_id=260986798]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 18
+text = "Starlif Circuit"
+
+[node name="TimerLabel" type="Label" parent="MarginContainer/HBoxContainer/LeftBoxContainer" unique_id=1091272024]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 36
+text = "00:45.78"
+
+[node name="RightBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=416192613]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="BackButton" type="Button" parent="MarginContainer/HBoxContainer/RightBoxContainer" unique_id=1495224478]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oo0fn")
+text = "X"
+
+[node name="Map" type="TextureRect" parent="MarginContainer/HBoxContainer/RightBoxContainer" unique_id=915517509]
+layout_mode = 2
+size_flags_vertical = 10
+texture = ExtResource("2_oo0fn")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/RightBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

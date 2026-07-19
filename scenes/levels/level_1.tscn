@@ -3,26 +3,27 @@
 [ext_resource type="Texture2D" uid="uid://bgvyekq2efx2h" path="res://assets/sprites/purple.png" id="1_3hls8"]
 [ext_resource type="Script" uid="uid://caf5w1vre1lmq" path="res://scripts/level_1.gd" id="1_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://b0stajjw7wadw" path="res://entities/player.tscn" id="2_bswci"]
+[ext_resource type="PackedScene" uid="uid://2p32evdg6lc0" path="res://scenes/hud.tscn" id="2_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://dbm8fuxvocej3" path="res://scenes/levels/maze.tscn" id="3_rus8k"]
 [ext_resource type="FontFile" uid="uid://fomltxatve4u" path="res://assets/fonts/ShareTechMono-Regular.ttf" id="5_6761a"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6761a"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_5xbjy"]
-font_size = 32
-
-[sub_resource type="LabelSettings" id="LabelSettings_4nkto"]
-font_size = 24
+font = ExtResource("5_6761a")
+font_size = 36
 
 [node name="level1" type="Node2D" unique_id=1025364563]
 script = ExtResource("1_5xbjy")
 
 [node name="Graphics" type="Node" parent="." unique_id=1317390065]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Graphics" unique_id=997837113]
+[node name="UI" type="CanvasLayer" parent="Graphics" unique_id=1671027917]
+
+[node name="HUD" parent="Graphics/UI" unique_id=1252097913 instance=ExtResource("2_sk5k4")]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="Graphics" unique_id=997837113]
 layer = -10
 
-[node name="Background" type="TextureRect" parent="Graphics/CanvasLayer" unique_id=1156278835]
+[node name="Background" type="TextureRect" parent="Graphics/BackgroundLayer" unique_id=1156278835]
 z_index = -100
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,49 +33,6 @@ grow_vertical = 2
 texture = ExtResource("1_3hls8")
 expand_mode = 1
 stretch_mode = 1
-
-[node name="MazeMap" parent="Graphics/CanvasLayer" unique_id=859919749 instance=ExtResource("3_rus8k")]
-position = Vector2(852, 622)
-scale = Vector2(0.01, 0.01)
-
-[node name="Polygon2D" parent="Graphics/CanvasLayer/MazeMap" index="1" unique_id=641786099]
-texture = null
-
-[node name="MarginContainer" type="MarginContainer" parent="Graphics/CanvasLayer" unique_id=565290693]
-z_index = -25
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -41.0
-offset_bottom = 57.0
-grow_horizontal = 0
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-
-[node name="BackButton" type="Button" parent="Graphics/CanvasLayer/MarginContainer" unique_id=577450965]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("5_6761a")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_6761a")
-text = "X"
-
-[node name="SportLabel" type="Label" parent="Graphics/CanvasLayer" unique_id=303304083]
-z_index = -25
-offset_left = 867.0
-offset_top = 543.0
-offset_right = 1138.0
-offset_bottom = 588.0
-text = "Stellar Grand Prix"
-label_settings = SubResource("LabelSettings_5xbjy")
-
-[node name="CircuitLabel" type="Label" parent="Graphics/CanvasLayer" unique_id=1608306817]
-z_index = -25
-offset_left = 924.0
-offset_top = 588.0
-offset_right = 1138.0
-offset_bottom = 633.0
-text = "Starlift Circuit"
-label_settings = SubResource("LabelSettings_5xbjy")
 
 [node name="StartLabel" type="Label" parent="Graphics" unique_id=474321465]
 z_index = -25
@@ -88,23 +46,11 @@ label_settings = SubResource("LabelSettings_5xbjy")
 [node name="EndLabel" type="Label" parent="Graphics" unique_id=231768407]
 z_index = -25
 offset_left = 486.0
-offset_top = 37.0
+offset_top = 18.0
 offset_right = 581.0
-offset_bottom = 82.0
+offset_bottom = 63.0
 text = "END"
 label_settings = SubResource("LabelSettings_5xbjy")
-
-[node name="Tutorial" type="Label" parent="Graphics" unique_id=301868919]
-z_index = -25
-offset_left = -343.0
-offset_top = -181.0
-offset_right = 150.0
-offset_bottom = 1.0
-text = "Rules:
-- Move with Arrow Keys or WASD
-- Reach the finish line
-- Going off the track resets you to the start"
-label_settings = SubResource("LabelSettings_4nkto")
 
 [node name="Player" parent="." unique_id=199418916 instance=ExtResource("2_bswci")]
 position = Vector2(221, 136)
@@ -113,7 +59,4 @@ position = Vector2(221, 136)
 z_index = -50
 position = Vector2(-197, -232)
 
-[connection signal="pressed" from="Graphics/CanvasLayer/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
-
-[editable path="Graphics/CanvasLayer/MazeMap"]
