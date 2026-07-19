@@ -1,7 +1,8 @@
 extends Node2D
 
 @onready var hud: Control = $Graphics/UI/HUD
-@onready var game_timer: Timer = $Timer
+#@onready var game_timer: Timer = $Timer
+@onready var player: RigidBody2D = $Player
 
 var circuit: String = "Starlif Circuit"
 var start_time: int = 0
@@ -11,6 +12,7 @@ var is_timer_running: bool = false
 
 func _ready() -> void:
 	hud.set_circuit_label(circuit)
+	hud.initialize_minimap(player)
 	start_race()
 
 func _process(delta: float) -> void:
