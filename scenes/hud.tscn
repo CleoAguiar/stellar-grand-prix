@@ -72,6 +72,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_oo0fn")
 text = "X"
 
 [node name="Minimap" type="TextureRect" parent="MarginContainer/HBoxContainer/RightBoxContainer" unique_id=915517509]
+modulate = Color(0.6052743, 0.6052743, 0.6052743, 1)
 custom_minimum_size = Vector2(250, 162)
 layout_mode = 2
 size_flags_horizontal = 8
