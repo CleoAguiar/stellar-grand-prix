@@ -8,8 +8,8 @@ extends Control
 var player_ref: RigidBody2D = null
 
 #@export var world_size: Vector2 = Vector2(4000, 3000)
-var world_min: Vector2 = Vector2(-7220, -6030)
-var world_size: Vector2 = Vector2(11210, 7280)
+var world_min: Vector2 = Vector2(-7400, -6200)
+var world_size: Vector2 = Vector2(12672, 7128)
 
 
 func _process(delta: float) -> void:
@@ -25,16 +25,13 @@ func update_minimap_position() -> void:
 
 	var normalized_player_pos: Vector2 = player_ref.global_position - world_min
 
-	var x_ratio: float = normalized_player_pos.x / world_size.x
-	var y_ratio: float = normalized_player_pos.y / world_size.y
+	var x_ratio: float = clampf(normalized_player_pos.x / world_size.x, 0.0, 1.0)
+	var y_ratio: float = clampf(normalized_player_pos.y / world_size.y, 0.0, 1.0)
 	
-	x_ratio = clampf(x_ratio, 0.0, 1.0)
-	y_ratio = clampf(y_ratio, 0.0, 1.0)
-	
-	var target_x: float = (x_ratio * map_size.x) - (player_icon.size.x / 2)
-	var target_y: float = (y_ratio * map_size.y) - (player_icon.size.y / 2)
+	var target_x: float = x_ratio * map_size.x
+	var target_y: float = y_ratio * map_size.y
 
-	player_icon.position = Vector2(target_x, target_y)
+	player_icon.position = Vector2(target_x, target_y) - player_icon.pivot_offset
 	player_icon.rotation = player_ref.rotation
 
 func set_circuit_label(circuit: String) -> void:

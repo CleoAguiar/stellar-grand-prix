@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ojy2m2v2clu0" path="res://scripts/hud.gd" id="1_5ysmq"]
 [ext_resource type="FontFile" uid="uid://fomltxatve4u" path="res://assets/fonts/ShareTechMono-Regular.ttf" id="1_ahhtf"]
 [ext_resource type="Texture2D" uid="uid://cpm2gg3eu18mi" path="res://assets/sprites/ufoGreen.png" id="2_oo0fn"]
-[ext_resource type="Texture2D" uid="uid://kay5suvr2a63" path="res://assets/sprites/minimapa_gerado.png" id="3_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://bbyyv42wavxaq" path="res://assets/maps/minimapa_gerado.png" id="3_6fi6k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oo0fn"]
 
@@ -33,7 +33,7 @@ layout_mode = 2
 
 [node name="LeftBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=539962723]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 
 [node name="TitleContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/LeftBoxContainer" unique_id=1152186433]
 layout_mode = 2
@@ -55,7 +55,6 @@ text = "XXXXXXXXXX"
 
 [node name="TimerLabel" type="Label" parent="MarginContainer/HBoxContainer/LeftBoxContainer" unique_id=1091272024]
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_ahhtf")
 theme_override_font_sizes/font_size = 36
 text = "00:00.00"
@@ -66,33 +65,28 @@ size_flags_horizontal = 10
 
 [node name="BackButton" type="Button" parent="MarginContainer/HBoxContainer/RightBoxContainer" unique_id=1495224478]
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("1_ahhtf")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxEmpty_oo0fn")
 text = "X"
 
 [node name="Minimap" type="TextureRect" parent="MarginContainer/HBoxContainer/RightBoxContainer" unique_id=915517509]
+custom_minimum_size = Vector2(250, 162)
 layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 10
 texture = ExtResource("3_6fi6k")
-expand_mode = 4
-stretch_mode = 5
+expand_mode = 1
 
 [node name="PlayerIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/RightBoxContainer/Minimap" unique_id=1769583277]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -45.5
-offset_top = -45.5
-offset_right = 45.5
-offset_bottom = 45.5
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.2, 0.2)
+offset_right = 250.0
+offset_bottom = 162.0
+scale = Vector2(0.03, 0.03)
 texture = ExtResource("2_oo0fn")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/RightBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

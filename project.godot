@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Speedy Soucer"
+config/name="Stellar Grand Prix"
 run/main_scene="uid://d13yq2mowc7nf"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"

@@ -2,9 +2,10 @@
 extends Node
 
 # CONFIGURAÇÕES (Baseadas nas suas coordenadas)
-var world_min: Vector2 = Vector2(-7220, -6030)
-var world_size: Vector2 = Vector2(11210, 7280)
-var nome_do_arquivo: String = "res://minimapa_gerado.png" # Salva na raiz do projeto
+var world_min: Vector2 = Vector2(-7400, -6200)
+var world_size: Vector2 = Vector2(12672, 7128)
+var nome_do_arquivo: String = "res://assets/maps/minimapa_gerado.png"
+
 
 func _ready() -> void:
 	# Aguarda o jogo carregar completamente

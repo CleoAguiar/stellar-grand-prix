@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kay5suvr2a63"
-path="res://.godot/imported/minimapa_gerado.png-9655cc336c43ac11d00bf1ccabb86f8c.ctex"
+uid="uid://bbyyv42wavxaq"
+path="res://.godot/imported/minimapa_gerado.png-4f1cbc49d18262e59d6440d71349b399.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/minimapa_gerado.png"
-dest_files=["res://.godot/imported/minimapa_gerado.png-9655cc336c43ac11d00bf1ccabb86f8c.ctex"]
+source_file="res://assets/maps/minimapa_gerado.png"
+dest_files=["res://.godot/imported/minimapa_gerado.png-4f1cbc49d18262e59d6440d71349b399.ctex"]
 
 [params]
 
