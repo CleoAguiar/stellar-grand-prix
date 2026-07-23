@@ -1,0 +1,29 @@
+name: "Godot CI / PR Checks"
+
+on:
+  pull_request:
+    branches: [ "main", "develop" ]
+
+jobs:
+  check-project:
+    name: "Validar Projeto Godot"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v5
+
+      - name: Configurar Godot Engine
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          godot-version: '4.7.1' # Defina a versão exata do seu projeto
+          use-dotnet: false      # Mude para true se usar C#
+
+      - name: Verificar erros de importação/scripts (Import Check)
+        run: |
+          godot --headless --editor --quit
+
+      # Opcional: Se você usa a biblioteca GUT para testes unitários
+      # - name: Rodar Testes com GUT
+      #   run: |
+      #     godot --headless -s addons/gut/gut_cmdln.gd
