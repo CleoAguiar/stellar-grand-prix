@@ -17,8 +17,8 @@ jobs:
       - name: Configurar Godot Engine
         uses: chickensoft-games/setup-godot@v2
         with:
-          godot-version: '4.7.1' # Defina a versão exata do seu projeto
-          use-dotnet: false      # Mude para true se usar C#
+          version: '4.7.1'
+          use-dotnet: false
 
       - name: Verificar erros de importação/scripts (Import Check)
         run: |
