@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bgvyekq2efx2h" path="res://assets/sprites/purple.png" id="1_3hls8"]
 [ext_resource type="Script" uid="uid://caf5w1vre1lmq" path="res://scripts/level.gd" id="1_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://b0stajjw7wadw" path="res://entities/player.tscn" id="2_bswci"]
-[ext_resource type="PackedScene" uid="uid://2p32evdg6lc0" path="res://scenes/hud.tscn" id="2_sk5k4"]
+[ext_resource type="PackedScene" uid="uid://cr8ij7b88udu7" path="res://scenes/ui.tscn" id="2_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://dbm8fuxvocej3" path="res://scenes/levels/maze.tscn" id="3_rus8k"]
 [ext_resource type="FontFile" uid="uid://fomltxatve4u" path="res://assets/fonts/ShareTechMono-Regular.ttf" id="5_6761a"]
 [ext_resource type="PackedScene" uid="uid://dhqxh0orp1epw" path="res://scenes/exit_area.tscn" id="7_oc4kc"]
@@ -14,12 +14,11 @@ font_size = 36
 
 [node name="Level1" type="Node2D" unique_id=1025364563]
 script = ExtResource("1_5xbjy")
+is_final_level = true
 
 [node name="Graphics" type="Node" parent="." unique_id=1317390065]
 
-[node name="UI" type="CanvasLayer" parent="Graphics" unique_id=1671027917]
-
-[node name="HUD" parent="Graphics/UI" unique_id=1252097913 instance=ExtResource("2_sk5k4")]
+[node name="UI" parent="Graphics" unique_id=659205408 instance=ExtResource("2_oc4kc")]
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="Graphics" unique_id=997837113]
 layer = -10
@@ -61,7 +60,7 @@ z_index = -50
 position = Vector2(-197, -232)
 
 [node name="ExitArea" parent="." unique_id=1478972825 instance=ExtResource("7_oc4kc")]
-position = Vector2(544.00006, 61.99997)
+position = Vector2(536.0001, 69.99997)
 rotation = -0.2617994
 
 [connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]

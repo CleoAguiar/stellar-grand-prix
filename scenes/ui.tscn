@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cr8ij7b88udu7"]
+
+[ext_resource type="PackedScene" uid="uid://2p32evdg6lc0" path="res://scenes/hud.tscn" id="1_nt7q6"]
+[ext_resource type="Script" uid="uid://5u1gyqejldkn" path="res://scripts/ui.gd" id="1_yev5y"]
+[ext_resource type="PackedScene" uid="uid://dy2tx1l86apq8" path="res://scenes/results_screen.tscn" id="2_x4jx1"]
+
+[node name="UI" type="CanvasLayer" unique_id=659205408]
+script = ExtResource("1_yev5y")
+
+[node name="HUD" parent="." unique_id=1252097913 instance=ExtResource("1_nt7q6")]
+
+[node name="ResultsScreen" parent="." unique_id=1122864425 instance=ExtResource("2_x4jx1")]
+visible = false
