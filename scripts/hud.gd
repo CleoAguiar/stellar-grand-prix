@@ -7,12 +7,11 @@ extends Control
 
 var player_ref: RigidBody2D = null
 
-#@export var world_size: Vector2 = Vector2(4000, 3000)
 var world_min: Vector2 = Vector2(-7400, -6200)
 var world_size: Vector2 = Vector2(12672, 7128)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_instance_valid(player_ref):
 		update_minimap_position()
 
