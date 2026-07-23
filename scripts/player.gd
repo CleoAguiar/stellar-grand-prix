@@ -35,3 +35,16 @@ func _input(event):
 					apply_impulse(Vector2.DOWN * swipe_impulse)
 				else:
 					apply_impulse(Vector2.UP * swipe_impulse)
+
+func stop_moviment() -> void:
+	# Desativa os métodos de input e física do player
+	set_physics_process(false)
+	set_process_input(false)
+	
+	linear_damp = 5.0
+	await get_tree().create_timer(1.0).timeout
+	
+	# Zera a velocidade e congela o RigidBody
+	linear_velocity = Vector2.ZERO
+	angular_velocity = 0
+	freeze = true

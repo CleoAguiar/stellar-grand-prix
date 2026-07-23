@@ -42,4 +42,6 @@ func _on_maze_body_exited(_body: Node2D) -> void:
 
 func _on_exit_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
+		if body.has_method("stop_moviment"):
+			body.stop_moviment()
 		stop_race()
