@@ -49,8 +49,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TitleContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=633364070]
-layout_direction = 4
 layout_mode = 2
+layout_direction = 4
 theme = SubResource("Theme_wu84c")
 
 [node name="Title" type="TextureRect" parent="VBoxContainer/TitleContainer" unique_id=257964556]

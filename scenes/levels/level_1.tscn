@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://bb5h55bub2d30"]
 
 [ext_resource type="Texture2D" uid="uid://bgvyekq2efx2h" path="res://assets/sprites/purple.png" id="1_3hls8"]
-[ext_resource type="Script" uid="uid://caf5w1vre1lmq" path="res://scripts/level_1.gd" id="1_5xbjy"]
+[ext_resource type="Script" uid="uid://caf5w1vre1lmq" path="res://scripts/level.gd" id="1_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://b0stajjw7wadw" path="res://entities/player.tscn" id="2_bswci"]
 [ext_resource type="PackedScene" uid="uid://2p32evdg6lc0" path="res://scenes/hud.tscn" id="2_sk5k4"]
 [ext_resource type="PackedScene" uid="uid://dbm8fuxvocej3" path="res://scenes/levels/maze.tscn" id="3_rus8k"]
 [ext_resource type="FontFile" uid="uid://fomltxatve4u" path="res://assets/fonts/ShareTechMono-Regular.ttf" id="5_6761a"]
+[ext_resource type="PackedScene" uid="uid://dhqxh0orp1epw" path="res://scenes/exit_area.tscn" id="7_oc4kc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5xbjy"]
 font = ExtResource("5_6761a")
 font_size = 36
 
-[node name="level1" type="Node2D" unique_id=1025364563]
+[node name="Level1" type="Node2D" unique_id=1025364563]
 script = ExtResource("1_5xbjy")
 
 [node name="Graphics" type="Node" parent="." unique_id=1317390065]
@@ -59,4 +60,9 @@ position = Vector2(221, 136)
 z_index = -50
 position = Vector2(-197, -232)
 
+[node name="ExitArea" parent="." unique_id=1478972825 instance=ExtResource("7_oc4kc")]
+position = Vector2(544.00006, 61.99997)
+rotation = -0.2617994
+
 [connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
+[connection signal="body_entered" from="ExitArea" to="." method="_on_exit_area_body_entered"]

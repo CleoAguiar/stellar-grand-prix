@@ -40,3 +40,7 @@ func stop_race() -> void:
 
 func _on_maze_body_exited(body: Node2D) -> void:
 	get_tree().reload_current_scene()
+
+func _on_exit_area_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		stop_race()
