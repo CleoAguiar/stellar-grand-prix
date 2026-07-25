@@ -1,12 +1,10 @@
 name: Publish to Itch.io
 
 on:
-  push:
-    tags:
-      [published]
-      # - "v*"
-    paths-ignore:
-      - 'README.md'
+  release:
+    types: [published]
+  workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
