@@ -1,5 +1,8 @@
 extends Node2D
 
+@export var is_final_level: bool = false
+
+@onready var ui: CanvasLayer = $Graphics/UI
 @onready var hud: Control = $Graphics/UI/HUD
 @onready var player: RigidBody2D = $Player
 
@@ -45,3 +48,5 @@ func _on_exit_area_body_entered(body: Node2D) -> void:
 		if body.has_method("stop_moviment"):
 			body.stop_moviment()
 		stop_race()
+		await get_tree().create_timer(1.5).timeout
+		ui.show_results_screen(true)
