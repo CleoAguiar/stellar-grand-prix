@@ -3,7 +3,8 @@ name: Publish to Itch.io
 on:
   push:
     tags:
-      - "v*"
+      [published]
+      # - "v*"
     paths-ignore:
       - 'README.md'
 jobs:
