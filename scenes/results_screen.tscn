@@ -19,55 +19,120 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.49803922)
+color = Color(0, 0, 0, 0.8)
 
 [node name="ButtonContainer" type="VBoxContainer" parent="ColorRect" unique_id=1158630695]
+custom_minimum_size = Vector2(576, 518.4)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -72.0
-offset_right = 150.0
-offset_bottom = 72.0
+offset_left = -288.0
+offset_top = -259.2
+offset_right = 288.0
+offset_bottom = 259.2
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FinalTimeLabel" type="Label" parent="ColorRect/ButtonContainer" unique_id=503851584]
+[node name="ResultLabel" type="Label" parent="ColorRect/ButtonContainer" unique_id=848160555]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_fqf1x")
-theme_override_font_sizes/font_size = 54
+theme_override_font_sizes/font_size = 74
+text = "RESULTADO"
+
+[node name="LapMargin" type="MarginContainer" parent="ColorRect/ButtonContainer" unique_id=1843773142]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ButtonContainer/LapMargin" unique_id=1847138581]
+layout_mode = 2
+
+[node name="TextLabel" type="Label" parent="ColorRect/ButtonContainer/LapMargin/VBoxContainer" unique_id=604182674]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_fqf1x")
+theme_override_font_sizes/font_size = 27
+text = "Lap Time"
+
+[node name="FinalTimeLabel" type="Label" parent="ColorRect/ButtonContainer/LapMargin/VBoxContainer" unique_id=503851584]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_fqf1x")
+theme_override_font_sizes/font_size = 62
 text = "MM:SS.mm"
 
-[node name="BestTimeLabel" type="Label" parent="ColorRect/ButtonContainer" unique_id=564295664]
+[node name="RecordMargin" type="MarginContainer" parent="ColorRect/ButtonContainer" unique_id=1256183719]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/ButtonContainer/RecordMargin" unique_id=1130446445]
+layout_mode = 2
+
+[node name="TextLabel" type="Label" parent="ColorRect/ButtonContainer/RecordMargin/VBoxContainer" unique_id=1111778678]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_fqf1x")
+theme_override_font_sizes/font_size = 27
+text = "Best Time"
+
+[node name="BestTimeLabel" type="Label" parent="ColorRect/ButtonContainer/RecordMargin/VBoxContainer" unique_id=564295664]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_fqf1x")
 theme_override_font_sizes/font_size = 43
 text = "MM:SS.mm"
+horizontal_alignment = 1
 
-[node name="NewRecordLabel" type="Label" parent="ColorRect/ButtonContainer" unique_id=239998700]
+[node name="NewRecordLabel" type="Label" parent="ColorRect/ButtonContainer/RecordMargin/VBoxContainer" unique_id=239998700]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_fqf1x")
 theme_override_font_sizes/font_size = 54
+text = "Novo record"
 
-[node name="PlayAgainButton" type="Button" parent="ColorRect/ButtonContainer" unique_id=381207169]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/ButtonContainer" unique_id=146704876]
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[node name="PlayAgainMargin" type="MarginContainer" parent="ColorRect/ButtonContainer/HBoxContainer" unique_id=1304918630]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PlayAgainButton" type="Button" parent="ColorRect/ButtonContainer/HBoxContainer/PlayAgainMargin" unique_id=381207169]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("1_fqf1x")
-theme_override_font_sizes/font_size = 54
-text = "Play Again"
+theme_override_font_sizes/font_size = 38
+text = "Play again"
 
-[node name="MenuButton" type="Button" parent="ColorRect/ButtonContainer" unique_id=912916555]
+[node name="MenuMargin" type="MarginContainer" parent="ColorRect/ButtonContainer/HBoxContainer" unique_id=1029454114]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MenuButton" type="Button" parent="ColorRect/ButtonContainer/HBoxContainer/MenuMargin" unique_id=912916555]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("1_fqf1x")
-theme_override_font_sizes/font_size = 54
+theme_override_font_sizes/font_size = 38
 text = "Menu"
 
-[connection signal="pressed" from="ColorRect/ButtonContainer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
-[connection signal="pressed" from="ColorRect/ButtonContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="ColorRect/ButtonContainer/HBoxContainer/PlayAgainMargin/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="ColorRect/ButtonContainer/HBoxContainer/MenuMargin/MenuButton" to="." method="_on_menu_button_pressed"]

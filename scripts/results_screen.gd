@@ -1,8 +1,8 @@
 extends Control
 
-@onready var final_time_label: Label = $ColorRect/ButtonContainer/FinalTimeLabel
-@onready var best_time_label: Label = $ColorRect/ButtonContainer/BestTimeLabel
-@onready var new_record_label: Label = $ColorRect/ButtonContainer/NewRecordLabel
+@onready var final_time_label: Label = $ColorRect/ButtonContainer/LapMargin/VBoxContainer/FinalTimeLabel
+@onready var best_time_label: Label = $ColorRect/ButtonContainer/RecordMargin/VBoxContainer/BestTimeLabel
+@onready var new_record_label: Label = $ColorRect/ButtonContainer/RecordMargin/VBoxContainer/NewRecordLabel
 
 func show_result(track_name: String, final_time_msec: int) -> void:
 	var new_record = RecordManager.is_new_record(track_name, final_time_msec)
