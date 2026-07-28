@@ -35,6 +35,26 @@ offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="FinalTimeLabel" type="Label" parent="ColorRect/ButtonContainer" unique_id=503851584]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_fqf1x")
+theme_override_font_sizes/font_size = 54
+text = "MM:SS.mm"
+
+[node name="BestTimeLabel" type="Label" parent="ColorRect/ButtonContainer" unique_id=564295664]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_fqf1x")
+theme_override_font_sizes/font_size = 43
+text = "MM:SS.mm"
+
+[node name="NewRecordLabel" type="Label" parent="ColorRect/ButtonContainer" unique_id=239998700]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_fqf1x")
+theme_override_font_sizes/font_size = 54
+
 [node name="PlayAgainButton" type="Button" parent="ColorRect/ButtonContainer" unique_id=381207169]
 layout_mode = 2
 size_flags_vertical = 8
