@@ -1,19 +1,19 @@
 extends Node2D
 
 @export var is_final_level: bool = false
+@export var track_id : String = "starlif_circuit"
+@export var track_name : String = "Starlif Circuit"
 
 @onready var ui: CanvasLayer = $Graphics/UI
 @onready var hud: Control = $Graphics/UI/HUD
 @onready var player: RigidBody2D = $Player
 
-var circuit: String = "Starlif Circuit"
 var start_time: int = 0
 var elapsed_time_msec: int = 0
 var is_timer_running: bool = false
 
-
 func _ready() -> void:
-	hud.set_circuit_label(circuit)
+	hud.set_circuit_label(track_name)
 	hud.initialize_minimap(player)
 	start_race()
 
@@ -48,5 +48,7 @@ func _on_exit_area_body_entered(body: Node2D) -> void:
 		if body.has_method("stop_moviment"):
 			body.stop_moviment()
 		stop_race()
+		
 		await get_tree().create_timer(1.5).timeout
-		ui.show_results_screen(true)
+		
+		ui.show_results_screen(track_id, elapsed_time_msec)
