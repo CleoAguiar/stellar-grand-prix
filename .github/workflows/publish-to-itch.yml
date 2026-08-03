@@ -1,12 +1,10 @@
 name: Publish to Itch.io
 
 on:
-  push:
-    tags:
-      [published]
-      # - "v*"
-    paths-ignore:
-      - 'README.md'
+  release:
+    types: [published]
+  workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -30,5 +28,5 @@ jobs:
           butler_key: ${{secrets.ITCHIO_TOKEN}}
           itch_user: cleoaguiar
           itch_game: stellar-grand-prix
-          version: ${{ github.ref_name }}
+          version: ${{ github.event.release.tag_name }}
           files: "${{ steps.export.outputs.archive_directory }}/sgp-web.zip"
