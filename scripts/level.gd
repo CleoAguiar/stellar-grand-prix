@@ -41,6 +41,12 @@ func stop_race() -> void:
 	is_timer_running = false
 
 func _on_maze_body_exited(_body: Node2D) -> void:
+	AudioManager.play_collision()
+	await get_tree().create_timer(0.10).timeout
+	
+	AudioManager.play_restart()
+	await get_tree().create_timer(0.25).timeout
+
 	get_tree().reload_current_scene()
 
 func _on_exit_area_body_entered(body: Node2D) -> void:
@@ -48,7 +54,7 @@ func _on_exit_area_body_entered(body: Node2D) -> void:
 		if body.has_method("stop_moviment"):
 			body.stop_moviment()
 		stop_race()
-		
+		AudioManager.play_victory()
 		await get_tree().create_timer(1.5).timeout
 		
 		ui.show_results_screen(track_id, elapsed_time_msec)
