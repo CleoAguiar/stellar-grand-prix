@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/CleoAguiar/stellar-grand-prix/compare/v0.3.0...v0.4.0) (2026-08-03)
+
+
+### Features
+
+* implement sound effects system ([#22](https://github.com/CleoAguiar/stellar-grand-prix/issues/22)) ([3270ca3](https://github.com/CleoAguiar/stellar-grand-prix/commit/3270ca3e5bb9e681c5ffb01a2b843c9ac93a3edd))
+
 ## [0.3.0](https://github.com/CleoAguiar/stellar-grand-prix/compare/v0.2.0...v0.3.0) (2026-07-25)
 
 
