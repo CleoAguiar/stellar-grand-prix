@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/CleoAguiar/stellar-grand-prix/compare/v0.4.0...v0.4.1) (2026-08-03)
+
+
+### Bug Fixes
+
+* **actions:** use PAT to allow release workflows ([#25](https://github.com/CleoAguiar/stellar-grand-prix/issues/25)) ([73f3b5a](https://github.com/CleoAguiar/stellar-grand-prix/commit/73f3b5ab677853df611f87cde4ced063d22381d0))
+
 ## [0.4.0](https://github.com/CleoAguiar/stellar-grand-prix/compare/v0.3.0...v0.4.0) (2026-08-03)
 
 
