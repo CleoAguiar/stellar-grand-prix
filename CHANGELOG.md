@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/CleoAguiar/stellar-grand-prix/compare/v0.4.1...v0.4.2) (2026-08-04)
+
+
+### Bug Fixes
+
+* restore RecordManager autoload configuration ([#28](https://github.com/CleoAguiar/stellar-grand-prix/issues/28)) ([7a68e29](https://github.com/CleoAguiar/stellar-grand-prix/commit/7a68e29664774a769cbf3f9e2aee92c89aa54d51))
+
 ## [0.4.1](https://github.com/CleoAguiar/stellar-grand-prix/compare/v0.4.0...v0.4.1) (2026-08-03)
 
 
