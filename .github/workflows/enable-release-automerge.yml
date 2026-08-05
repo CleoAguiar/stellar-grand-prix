@@ -1,0 +1,28 @@
+name: Enable Auto Merge for Release Please
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  enable-auto-merge:
+    if: github.event.pull_request.head.ref == 'release-please--branches--'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enable auto-merge
+        env:
+          GH_TOKEN: ${{ secrets.RELEASE_PLEASE_TOKEN }}
+        run: |
+          gh pr merge \
+            --auto \
+            --merge \
+            ${{ github.event.pull_request.number }}
