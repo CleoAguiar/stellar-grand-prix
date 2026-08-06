@@ -25,6 +25,7 @@ func _process(_delta: float) -> void:
 func start_race() -> void:
 	start_time = Time.get_ticks_msec()
 	is_timer_running = true
+	AudioManager.play_music()
 
 func update_clock_ui() -> void:
 	var total_seconds: int = floori(elapsed_time_msec / 1000.0)
@@ -39,6 +40,8 @@ func update_clock_ui() -> void:
 
 func stop_race() -> void:
 	is_timer_running = false
+	AudioManager.stop_music()
+	AudioManager.play_victory()
 
 func _on_maze_body_exited(_body: Node2D) -> void:
 	AudioManager.play_collision()
@@ -54,7 +57,6 @@ func _on_exit_area_body_entered(body: Node2D) -> void:
 		if body.has_method("stop_moviment"):
 			body.stop_moviment()
 		stop_race()
-		AudioManager.play_victory()
 		await get_tree().create_timer(1.5).timeout
 		
 		ui.show_results_screen(track_id, elapsed_time_msec)

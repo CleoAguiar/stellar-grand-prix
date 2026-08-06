@@ -2,13 +2,24 @@
 
 [ext_resource type="Script" uid="uid://b2n0pnrpl5rh1" path="res://scripts/audio_manager.gd" id="1_8qd8g"]
 
+[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_vcisa"]
+
 [node name="AudioManager" type="Node" unique_id=1477840284]
 script = ExtResource("1_8qd8g")
 
 [node name="ButtonPlayer" type="AudioStreamPlayer" parent="." unique_id=538074469]
+bus = &"SFX"
 
 [node name="CollisionPlayer" type="AudioStreamPlayer" parent="." unique_id=128155114]
+bus = &"SFX"
 
 [node name="VictoryPlayer" type="AudioStreamPlayer" parent="." unique_id=1698544601]
+bus = &"SFX"
 
 [node name="RestartPlayer" type="AudioStreamPlayer" parent="." unique_id=435246704]
+bus = &"SFX"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1329573270]
+stream = SubResource("AudioStreamOggVorbis_vcisa")
+bus = &"Music"
+parameters/looping = true
