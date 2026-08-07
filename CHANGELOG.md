@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/CleoAguiar/stellar-grand-prix/compare/v0.4.2...v0.5.0) (2026-08-07)
+
+
+### Features
+
+* **audio:** add race music and audio settings ([#32](https://github.com/CleoAguiar/stellar-grand-prix/issues/32)) ([22af0ec](https://github.com/CleoAguiar/stellar-grand-prix/commit/22af0ecd015b132f4502fd33b544de4c8cbca284))
+
 ## [0.4.2](https://github.com/CleoAguiar/stellar-grand-prix/compare/v0.4.1...v0.4.2) (2026-08-04)
 
 
