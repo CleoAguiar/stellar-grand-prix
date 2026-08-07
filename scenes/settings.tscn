@@ -73,21 +73,21 @@ theme_override_constants/margin_bottom = 36
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer" unique_id=1986248665]
 layout_mode = 2
 
-[node name="MusicButton" type="CheckButton" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1435543540]
+[node name="MusicCheckButton" type="CheckButton" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1435543540]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_es4n0")
 theme_override_font_sizes/font_size = 36
 button_pressed = true
 text = "Music"
 
-[node name="Settings" type="CheckButton" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1989170156]
+[node name="SFXCheckButton" type="CheckButton" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1989170156]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_es4n0")
 theme_override_font_sizes/font_size = 36
 button_pressed = true
 text = "SFX"
 
-[node name="FullscreenButton" type="CheckButton" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1236827225]
+[node name="FullscreenCheckButton" type="CheckButton" parent="VBoxContainer/MarginContainer/VBoxContainer" unique_id=1236827225]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("4_es4n0")
 theme_override_font_sizes/font_size = 36
@@ -102,4 +102,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_gis3k")
 text = "Credits"
 
 [connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="toggled" from="VBoxContainer/MarginContainer/VBoxContainer/MusicCheckButton" to="." method="_on_music_check_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/MarginContainer/VBoxContainer/SFXCheckButton" to="." method="_on_sfx_check_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/MarginContainer/VBoxContainer/FullscreenCheckButton" to="." method="_on_fullscreen_check_button_toggled"]
 [connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
